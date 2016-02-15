@@ -6,9 +6,9 @@ var app = angular.module('taskApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('home', {url: '/', templateUrl: '/partials/index.jade', controller: 'homeCtrl'});
-    // .state('home', {url: '/', templateUrl: '/partials/home.jade', controller: 'homeCtrl'});
-    // .state('table', {url: '/', templateUrl: 'views/table.jade', controller: 'homeCtrl'});
+    .state('index', {url: '/', templateUrl: 'views/index.jade', controller: 'homeCtrl'})
+    .state('home', {url: '/home', templateUrl: '/views/home.jade', controller: 'taskCtrl'});
+    // .state('table', {url: '/', templateUrl: 'views/table.jade', controller: 'tableCtrl'});
 
     $urlRouterProvider.otherwise('/');
 });
@@ -21,19 +21,20 @@ app.controller('homeCtrl', function($scope, $state) {
     $scope.tasks.push($scope.newTask);
     $scope.newTask = {};
   }
-
 });
 
-app.controller('taskCtrl', function($scope, $moment) {
-  Tasks.getAllTasks()
-    .then
-})
+app.controller('taskCtrl', function($scope, $state, $moment) {
 
-
-app.controller('timeCtrl', function($scope, $moment) {
-  $scope.time = $moment("", "YYYYMMDD").dateNow();
-
-})
+  console.log('taskCtrl');
+  $scope.getTasks = function($scope) {
+    console.log('here');
+  }
+  //   $scope.time = $moment("", "YYYYMMDD").dateNow();
+});
+//
+//   Tasks.getAllTasks()
+//     .then
+// });
 
 app.service('Tasks', function($http) {
   var taskItem;

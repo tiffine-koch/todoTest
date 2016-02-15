@@ -1,23 +1,24 @@
-extends layout
-
-block styles
-
-block content
-
-  h3 Current Tasks
-    //- .container(ng-controller='taskApp')
-  table.table.myTaskList
-      //- tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)') {{header}}
-    thead
-      tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)')
-          td Task Name
-          td Task Description
-          td Task Date
-          td Is Completed
-    tbody
-      tr(ng-repeat='task in list' ng-if='list.length')
-        td{{task.name}}
-        td{{task.description}}
-        td{{task.date}}
-        td
-          input(type='checkbox', value='', ng-model='task.completed')
+//- extends layout
+//- 
+//- block styles
+//- 
+//- block content
+//- 
+//-   h3 Current Tasks
+//-   
+//-   .container(ng-controller='taskApp')
+//-     table.table.myTaskList
+//-         //- tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)') {{header}}
+//-       thead
+//-         tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)')
+//-             td Task Name
+//-             td Task Description
+//-             td Task Date
+//-             td Is Completed
+//-       tbody
+//-         tr(ng-repeat='task in list' ng-if='list.length')
+//-           td{{task.name}}
+//-           td{{task.description}}
+//-           td{{task.date}}
+//-           td
+//-             input(type='checkbox', value='', ng-model='task.completed')
