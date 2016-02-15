@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('someApp');
+var app = angular.module('taskApp');
 
 app.directive('myTable', function() {
   return {
@@ -8,7 +8,7 @@ app.directive('myTable', function() {
       list: '=',
     },
     controller: 'myTaskListCtrl',
-    templateUrl: '/partials/templates/myTable.html'
+    templateUrl: '/partials/templates/table.jade'
   };
 });
 
