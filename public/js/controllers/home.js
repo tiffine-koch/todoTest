@@ -17,4 +17,24 @@ app.controller('homeCtrl', function($scope) {
     $scope.tasks.push(task);
   }
 
+  Tasks.getAllTasks()
+    .then
+});
+
+Tasks.
+
+app.controller('timeCtrl', function($scope, $moment) {
+  $scope.time = $moment("", "YYYYMMDD").dateNow();
+
+})
+
+app.service('Tasks', function($http) {
+  var taskItem;
+
+  this.getAllasks = function(taskList) {
+    return $http.get('/');
+  };
+  this.addTask = function(taskObject) {
+    return $http.post('/create', {name: task.name, date: task.date}, completed: task.completed);
+  };
 });
