@@ -6,12 +6,13 @@ var app = angular.module('taskApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('home', {url: '/', templateUrl: '/partials/home.jade', controller: 'homeCtrl'});
+    // .state('home', {url: '/', templateUrl: '/partials/home.jade', controller: 'homeCtrl'});
+    .state('table', {url: '/', templateUrl: 'views/table.jade', controller: 'homeCtrl'});
 
     $urlRouterProvider.otherwise('/');
 });
 
-app.controller('homeCtrl', function($scope) {
+app.controller('homeCtrl', function($scope, $state) {
   console.log('homeCtrl');
   $scope.tasks = [];
 

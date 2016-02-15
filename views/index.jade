@@ -2,14 +2,13 @@ extends layout
 
 block styles
     link(rel='stylesheet', href='stylesheets/index.css')
-    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', rel='stylesheet', integrity='sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==', crossorigin='anonymous')
+    //- link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', rel='stylesheet', integrity='sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==', crossorigin='anonymous')
     //- script(src='js/index.js')    
-  
 block content
 
   h2 Much Todo About Everything
   
-  .container
+  .container(ng-controller='homeCtrl')
     form.form-inline(action='')
       .form-group
         label(for='task') Task Name
@@ -23,23 +22,23 @@ block content
         input(type='date', placeholder='', ng-model='task.date')  
       button.btn.btn-success(ng-click='createTask()') Create New Task
     
-    h3 Current Tasks
-        
-    table.table.myTaskList
-      thead
-        //- tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)') {{header}}
-        tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)')
-          td Task Name
-          td Task Description
-          td Task Date
-          td Is Completed
-      tbody
-        tr(ng-repeat='task in list' ng-if='list.length')
-          td{{task.name}}
-          td{{task.description}}
-          td{{task.date}}
-          td
-            input(type='checkbox', value='', ng-model='task.completed')
+    //- h3 Current Tasks
+    //-     
+    //- table.table.myTaskList
+    //-   thead
+    //-     //- tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)') {{header}}
+    //-     tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)')
+    //-       td Task Name
+    //-       td Task Description
+    //-       td Task Date
+    //-       td Is Completed
+    //-   tbody
+    //-     tr(ng-repeat='task in list' ng-if='list.length')
+    //-       td{{task.name}}
+    //-       td{{task.description}}
+    //-       td{{task.date}}
+    //-       td
+    //-         input(type='checkbox', value='', ng-model='task.completed')
 
 
 
