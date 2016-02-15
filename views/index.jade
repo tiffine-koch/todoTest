@@ -1,11 +1,11 @@
 block styles
     link(rel='stylesheet', href='stylesheets/style.css')
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', rel='stylesheet', integrity='sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==', crossorigin='anonymous')
     
   
 block content
 
-  h2 Much Todo-List About Everything
-  button.btn.btn-success(ui-sref='home') Enter Task List
+  h2 Much Todo About Everything
   
   .container
     form.form-inline(action='')
@@ -14,9 +14,26 @@ block content
         input(type='text', placeholder='enter task', ng-model='task.name')
       .form-group
         label(for='date') Date
-        input(type='date', placeholder='', ng-model='task.date')
+        input(type='date', placeholder='', ng-model='task.date')  
+      button.btn.btn-success(ui-sref='home') Create New Task
+    
+    h3 Current Tasks
+        
     table.table
       thead
-      tbody
+        tr
+          td Task Name
+          td Task Date
+          td Is Completed
+        tbody
+        tr
+          td
+          td
+          td
+            input(type='checkbox', value='', ng-model='task.completed')
+      
+    ui-view
 
-      ui-view
+
+      
+      
