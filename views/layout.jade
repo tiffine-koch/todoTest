@@ -11,7 +11,8 @@ html(lang='en')
     script(src='js/index.js')
     block styles
   
-  body
+  body(ng-app='taskApp')
+    ui-view
     block content
     //- h2 Much Todo About Everything
     //- button.btn.btn-success(ui-sref='home') Enter Task List

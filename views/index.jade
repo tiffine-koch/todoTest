@@ -1,5 +1,5 @@
 block styles
-    link(rel='stylesheet', href='stylesheets/style.css')
+    link(rel='stylesheet', href='stylesheets/index.css')
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', rel='stylesheet', integrity='sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==', crossorigin='anonymous')
     
   
@@ -21,14 +21,15 @@ block content
         
     table.table
       thead
-        tr
+        //- tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)') {{header | titlecase}}
+        tr(ng-repeat='(header, value) in list[0] track by $index', ng-click='sort(header)')
           td Task Name
           td Task Date
           td Is Completed
         tbody
-        tr
-          td
-          td
+        tr(ng-repeat='item in list' ng-if='list.length')
+          td{{item.name}}
+          td{{item.date}}
           td
             input(type='checkbox', value='', ng-model='task.completed')
       
