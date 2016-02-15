@@ -1,9 +1,22 @@
-var mongoose = ('require mongoose');
+'use strict';
+var mongoose = require ('mongoose');
 
-task.Schema {
-  name: String;
+var taskSchema = new mongoose.Schema ({
+  name: String,
   date: Number
+})
+
+taskSchema.statics.create = function(taskObj, cb) {
+	var task = new task(taskObj);
+	task.save(cb);
 }
 
+taskSchema.statics.findAll = function(cb) {
+	task.find({}, function(err, tasks) {
+    	cb(err,tasks);
+  	});
+}
 
-module.export = Task;
+var Task = mongoose.model('Task', taskSchema);
+
+module.exports = Task;
